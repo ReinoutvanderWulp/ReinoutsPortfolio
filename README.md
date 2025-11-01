@@ -54,7 +54,7 @@ Context moet niet op een zinvolle manier gebruikt worden zoals je dat zou doen i
 bijvoorbeeld alle state van één van de dynamische pagina's in Context plaatsen.
 Ook als je deze data enkel gebruikt op deze éne pagina.
 
-## Layout
+## LayoutComponent
 
 Je bouwt je website met behulp van een React componenten library die **niet** besproken is in de lessen.
 Het gebruik van shadcn/ui is dus niet toegestaan.
