@@ -11,7 +11,10 @@ const SelectComponent: FunctionComponent<SelectComponentProps> = ({data, onChang
     <Select
       onChange={onChange}
       placeholder="Selecteer een project"
-      options={[data.map((item) => ({value: item, label: item}))]}
+      options={data.map(item => ({
+        value: item,
+        label: item,
+      }))}
     />
   )
 }

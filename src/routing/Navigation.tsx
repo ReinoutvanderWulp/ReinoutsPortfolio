@@ -1,8 +1,11 @@
 import type {CSSProperties, FunctionComponent} from 'react'
+import {useContext} from 'react'
 import type {MenuProps} from 'antd'
+import {Switch} from 'antd'
 import {Menu} from 'antd'
 import {Link, useLocation} from 'react-router'
-import {CodeFilled, HomeFilled, MailOutlined, UserOutlined} from '@ant-design/icons'
+import {CodeFilled, HomeFilled, MailOutlined, MoonOutlined, SunOutlined, UserOutlined} from '@ant-design/icons'
+import {ThemeContext} from '@/components/LayoutComponent.tsx'
 
 type MenuItem = Required<MenuProps>['items'][number]
 
@@ -34,6 +37,8 @@ const items: MenuItem[] = [
 ]
 
 const Navigation: FunctionComponent = () => {
+  const {theme, toggleTheme} = useContext(ThemeContext)
+
   const location = useLocation()
 
   const getSelectedKey = (pathname: string): string => {
@@ -51,7 +56,17 @@ const Navigation: FunctionComponent = () => {
 
   const selectedKey = getSelectedKey(location.pathname)
 
-  return <Menu selectedKeys={[selectedKey]} mode="horizontal" items={items} theme="light" />
+  return (
+    <div>
+      <Menu selectedKeys={[selectedKey]} mode="horizontal" items={items} theme="light" />
+      <Switch
+        checkedChildren={<SunOutlined />}
+        unCheckedChildren={<MoonOutlined />}
+        checked={theme === 'dark'}
+        onChange={toggleTheme}
+      />
+    </div>
+  )
 }
 
 export default Navigation

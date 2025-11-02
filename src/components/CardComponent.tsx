@@ -5,7 +5,7 @@ import {Link} from 'react-router'
 const {Meta} = Card
 
 interface CardComponentProps {
-  src: string
+  src?: string
   title: string
   url: string
   pageName: string
@@ -13,7 +13,11 @@ interface CardComponentProps {
 
 const CardComponent: FunctionComponent<CardComponentProps> = ({src, title, url, pageName}) => {
   return (
-    <Card hoverable style={{width: 240}} cover={<Image width={200} src={src} />} extra={<Link to={url}>{pageName}</Link>}>
+    <Card
+      hoverable
+      style={{width: 400}}
+      cover={<Image width={200} src={src} preview={false} />}
+      extra={<Link to={url}>{pageName}</Link>}>
       <Meta title={title} />
     </Card>
   )

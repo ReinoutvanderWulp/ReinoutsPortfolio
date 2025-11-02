@@ -1,5 +1,5 @@
 import type {CSSProperties, FunctionComponent} from 'react'
-import {Typography} from 'antd'
+import {Col, Row, Typography} from 'antd'
 import type {ContactInfo} from '@/interfaces/ContactInfo.ts'
 import {EnvironmentOutlined, MailOutlined, PhoneOutlined} from '@ant-design/icons'
 import ContactInfoComponent from '@/components/ContactInfoComponent.tsx'
@@ -41,16 +41,16 @@ const Contact: FunctionComponent = () => {
           </Paragraph>
         </Typography>
       </div>
-      <div>
-        <div>
+      <Row>
+        <Col xs={24} lg={12}>
+          <ContactForm />
+        </Col>
+        <Col xs={24} lg={12}>
           {contactInfo.map((item, index) => (
             <ContactInfoComponent item={item} key={index} />
           ))}
-        </div>
-        <div>
-          <ContactForm />
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   )
 }

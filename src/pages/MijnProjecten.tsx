@@ -1,6 +1,6 @@
 import type {FunctionComponent} from 'react'
 import {useState} from 'react'
-import {Typography} from 'antd'
+import {Col, Row, Typography} from 'antd'
 import {projects} from '../data/projects.ts'
 import CardComponent from '@/components/CardComponent.tsx'
 import SelectComponent from '@/components/SelectComponent.tsx'
@@ -12,17 +12,17 @@ const MijnProjecten: FunctionComponent = () => {
   const [displayData, setDisplayData] = useState<Project[]>(projects)
 
   const onSelectChange = (value: string) => {
-    if (value === "Toon Alles"){
+    if (value === 'Toon Alles') {
       setDisplayData(projects)
       return
     }
 
-    const filteredData = projects.filter((project) => project.title === value)
+    const filteredData = projects.filter(project => project.title === value)
 
     setDisplayData(filteredData)
   }
 
-  const options: string[] = ["Toon Alles"]
+  const options: string[] = ['Toon Alles']
   projects.forEach(project => options.push(project.title))
 
   return (
@@ -33,17 +33,19 @@ const MijnProjecten: FunctionComponent = () => {
         </Typography>
         <SelectComponent data={options} onChange={onSelectChange} />
       </div>
-      <div className="flex flex-wrap gap-x-6 gap-y-8 justify-center">
+      <Row gutter={[32, 32]} justify="center">
         {displayData.map((project, index) => (
-          <CardComponent
-            src={project.src}
-            title={project.title}
-            url={`${project.url}${project.id}`}
-            pageName="Details Project"
-            key={index}
-          />
+          <Col xs={24} lg={12}>
+            <CardComponent
+              src={project.src}
+              title={project.title}
+              url={`${project.url}${project.id}`}
+              pageName="Details Project"
+              key={index}
+            />
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   )
 }
