@@ -9,14 +9,14 @@ import Details from '@/pages/Details.tsx'
 const Routing: FunctionComponent = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home/>}/>
-      <Route path="/overmij" element={<OverMij/>}/>
-      <Route path="/mijnprojecten" element={<Outlet/>}>
-        <Route index element={<MijnProjecten/>}/>
-        <Route path=":detailId" element={<Details/>}/>
+      <Route path="/home" element={<Home />} />
+      <Route path="/overmij" element={<OverMij />} />
+      <Route path="/mijnprojecten" element={<Outlet />}>
+        <Route index element={<MijnProjecten />} />
+        <Route path=":detailId" element={<Details />} />
       </Route>
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="*" element={<Home/>}/>
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   )
 }

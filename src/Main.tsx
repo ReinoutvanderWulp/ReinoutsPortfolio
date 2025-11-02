@@ -3,14 +3,12 @@ import {StrictMode} from 'react'
 import LayoutComponent from '@/components/LayoutComponent.tsx'
 import {BrowserRouter} from 'react-router'
 
-const root = createRoot(
-  document.getElementById("root") as HTMLElement
-)
+const root = createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <LayoutComponent/>
+      <LayoutComponent />
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 )
