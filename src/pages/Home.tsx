@@ -16,7 +16,7 @@ const homeCards: HomeData[] = [
     pageName: 'Mijn Projecten',
   },
   {
-    title: 'Contact opnemem met mij?',
+    title: 'Contact opnemen met mij?',
     url: '/contact',
     pageName: 'Contact',
   },
