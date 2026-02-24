@@ -4,7 +4,7 @@ import DownloadButton from '@/components/DownloadButton.tsx'
 import StepsComponent from '@/components/StepsComponent.tsx'
 import SkillLists from '@/components/SkillLists.tsx'
 
-const {Title, Paragraph, Text} = Typography
+const {Title, Paragraph} = Typography
 
 const containerStyle: CSSProperties = {
   overflowX: 'hidden',
@@ -17,34 +17,29 @@ const OverMij: FunctionComponent = () => {
         <Typography>
           <Title level={2}>Over Mij</Title>
           <Image src="/images/Reinout.png" width="30%" preview={false} />
-          <Title level={4}>Student Graduaat Programmeren</Title>
-          <Text>
-            Op dit ogenblik ben ik student aan Thomas More in Turnhout, waar ik het Graduaat Programmeren studeer. Kijk
-            onder de feitjes en skills voor een uitgebreidere uitleg.
-          </Text>
+          <Title level={4}>Afgestudeerd Programmeur</Title>
         </Typography>
       </div>
-      <SkillLists />
       <div>
         <Typography>
           <Paragraph>
-            Mijn naam is Reinout van der Wulp. Ik ben 22 jaar. Ik woon in Beerse. Mijn fascinatie voor ICT is in de loop
-            van de jaren gegroeid. Op de middelbare school kwam ik voor het eerst in aanraking met JAVA, HTML, PHP, etc.
-            Hierna was de overstap naar Thomas More Geel meer dan logisch. Aan Thomas More Geel studeerde ik eerst
-            Application Development, kortweg APP. Later ben ik overgestapt naar het Graduaat Programmeren in Turnhout.
-            Naast ICT ben ik graag bezig met reizen, tuinieren, lezen, luister ik graag muziek, kijk ik graag films en
-            ben ik fan van het songfestival. In de toekomst zou ik graag als webdeveloper of frontend developer in React
-            werken, bij een leuk bedrijf met een goede werksfeer. Meer weten over mij en mijn realisaties? Kijk dan
-            verder bij "Mijn Projecten" of download hieronder mijn CV.
+            Mijn naam is Reinout van der Wulp en ik ben 22 jaar oud. Ik woon in Beerse. Mijn fascinatie voor IT is in
+            de loop der jaren sterk gegroeid. Op de middelbare school kwam ik voor het eerst in aanraking met Java, HTML
+            en PHP. De overstap naar Thomas More in Geel was daarna een logische keuze. Daar studeerde ik eerst
+            Application Development (APP). Later ben ik overgestapt naar het graduaat Programmeren in Turnhout. Naast
+            IT hou ik van reizen en lezen. Ook luister ik graag naar muziek en kijk ik graag films. Daarnaast ben ik
+            fan van het Eurovisiesongfestival en de Efteling. In de toekomst zou ik graag aan de slag gaan als
+            webdeveloper of frontend developer, bij voorkeur met React of C#. Ik zoek een leuke werkomgeving met een
+            goede werksfeer waar ik mezelf verder kan ontwikkelen. Wil je meer weten over mij en mijn realisaties?
+            Bekijk dan mijn projecten of download hieronder mijn cv.
           </Paragraph>
-          <Title level={4}>Opleidingen en CV</Title>
-          <Paragraph>Wilt u mijn CV downloaden? Dat kan via onderstaande link:</Paragraph>
         </Typography>
         <DownloadButton fileName="ReinoutvdW-CV.pdf" fileUrl="/documents/ReinoutvdW-CV.pdf" buttonText="Download CV" />
+        <SkillLists />
       </div>
       <div>
         <Typography>
-          <Title level={4}>Mijn Hogeschool Opleidingen:</Title>
+          <Title level={4}>Mijn Opleidingen:</Title>
         </Typography>
         <StepsComponent />
         <DownloadButton

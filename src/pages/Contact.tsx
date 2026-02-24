@@ -14,8 +14,8 @@ const iconStyle: CSSProperties = {
 
 const contactInfo: ContactInfo[] = [
   {
-    label: 'Studielocatie:',
-    value: 'Campus Blairon 800, 2300 Turnhout',
+    label: 'Werklocatie:',
+    value: 'Ik ben momenteel werkzoekend',
     icon: <EnvironmentOutlined style={iconStyle} />,
   },
   {

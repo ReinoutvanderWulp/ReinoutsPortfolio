@@ -9,10 +9,6 @@ const iconStyle: CSSProperties = {
 export const facts: Info[] = [
   {
     icon: <RightOutlined style={iconStyle} />,
-    data: 'Geboortedatum: 8 Juli 2003',
-  },
-  {
-    icon: <RightOutlined style={iconStyle} />,
     data: 'Leeftijd: 22',
   },
   {
@@ -21,7 +17,7 @@ export const facts: Info[] = [
   },
   {
     icon: <RightOutlined style={iconStyle} />,
-    data: 'Opleiding: Graduaat (lopende)',
+    data: 'Opleiding: Graduaat programmeren',
   },
   {
     icon: <RightOutlined style={iconStyle} />,
@@ -29,7 +25,7 @@ export const facts: Info[] = [
   },
   {
     icon: <RightOutlined style={iconStyle} />,
-    data: 'Werkstatus: Niet-werkend',
+    data: 'Werkstatus: Werkzoekend',
   },
 ]
 

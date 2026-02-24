@@ -13,13 +13,16 @@ interface CardComponentProps {
 
 const CardComponent: FunctionComponent<CardComponentProps> = ({src, title, url, pageName}) => {
   return (
-    <Card
-      hoverable
-      style={{width: 400}}
-      cover={<Image width={200} src={src} preview={false} />}
-      extra={<Link to={url}>{pageName}</Link>}>
-      <Meta title={title} />
-    </Card>
+    <Link to={url} className="group no-underline">
+      <Card
+        hoverable
+        style={{width: 400}}
+        cover={<Image width={200} src={src} preview={false} />}
+        extra={title}
+        className="group-hover:text-[#1677ff] transition-colors duration-300">
+        <Meta title={<span className="group-hover:text-[#1677ff] transition-colors duration-300">{pageName}</span>} />
+      </Card>
+    </Link>
   )
 }
 

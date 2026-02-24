@@ -17,10 +17,10 @@ const HeroSection: FunctionComponent = () => {
         </Title>
         <Image src="/images/Reinout.png" width="20%" preview={false} />
         <Title level={5}>
-          Passievolle student Graduaat Programmeren, gespecialiseerd in React en Frontend Development. Klaar voor de
-          volgende uitdaging.
+          Programmeur, gespecialiseerd in Frontend Development, zowel react als C#. Klaar voor de
+          volgende uitdaging!
         </Title>
-        <Title level={5}>Kijk op de andere pagina's voor meer informatie! Of download hieronder meteen mijn CV:</Title>
+        <Title level={5}>Kijk op de andere pagina's voor meer informatie over mij!</Title>
       </Typography>
       <DownloadButton fileName="ReinoutvdW-CV.pdf" fileUrl="/documents/ReinoutvdW-CV.pdf" buttonText="Download CV" />
     </div>
