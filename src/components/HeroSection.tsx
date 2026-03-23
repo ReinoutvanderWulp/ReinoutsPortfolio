@@ -1,28 +1,38 @@
 import type {CSSProperties, FunctionComponent} from 'react'
-import {Image, Typography} from 'antd'
+import {Col, Image, Row, Space, Typography} from 'antd'
 import DownloadButton from '@/components/DownloadButton.tsx'
 
-const {Title} = Typography
+const {Title, Paragraph} = Typography
 
 const titleStyle: CSSProperties = {
   color: '#1677ff',
+  marginBottom: 0,
 }
 
 const HeroSection: FunctionComponent = () => {
   return (
     <div>
-      <Typography>
-        <Title level={1} style={titleStyle}>
-          Reinout van der Wulp
-        </Title>
-        <Image src="/images/Reinout.png" width="20%" preview={false} />
-        <Title level={5}>
-          Programmeur, gespecialiseerd in Frontend Development, zowel react als C#. Klaar voor de
-          volgende uitdaging!
-        </Title>
-        <Title level={5}>Kijk op de andere pagina's voor meer informatie over mij!</Title>
-      </Typography>
-      <DownloadButton fileName="ReinoutvdW-CV.pdf" fileUrl="/documents/ReinoutvdW-CV.pdf" buttonText="Download CV" />
+      <Row align="middle" gutter={[32, 32]}>
+        <Col xs={24} md={16}>
+          <Space direction="vertical" size="middle">
+            <Title level={1} style={titleStyle}>
+              Reinout van der Wulp
+            </Title>
+            <Paragraph style={{fontSize: 16}}>
+              Programmeur, gespecialiseerd in Frontend Development, react & C#. Klaar voor de volgende uitdaging!
+            </Paragraph>
+            <Paragraph>Bekijk mijn projecten of neem contact op met mij!</Paragraph>
+            <DownloadButton
+              fileName="ReinoutvdW-CV.pdf"
+              fileUrl="/documents/ReinoutvdW-CV.pdf"
+              buttonText="Download CV"
+            />
+          </Space>
+        </Col>
+        <Col xs={24} md={8} style={{textAlign: 'center'}}>
+          <Image src="/images/Reinout.png" width={200} preview={false} style={{borderRadius: '45%'}} />
+        </Col>
+      </Row>
     </div>
   )
 }

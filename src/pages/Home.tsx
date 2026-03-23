@@ -24,11 +24,11 @@ const homeCards: HomeData[] = [
 
 const Home: FunctionComponent = () => {
   return (
-    <div>
+    <div style={{maxWidth: 1200, margin: '0 auto', padding: '24px'}}>
       <HeroSection />
-      <Row gutter={[32, 32]} style={{padding: 6}}>
+      <Row gutter={[24, 24]} justify="center" style={{marginTop: '40'}}>
         {homeCards.map((item, index) => (
-          <Col xs={24} lg={8} key={index}>
+          <Col xs={24} sm={12} lg={8} key={index}>
             <CardComponent title={item.title} url={item.url} pageName={item.pageName} />
           </Col>
         ))}
