@@ -8,12 +8,15 @@ interface DownloadButtonProps {
   buttonText: string
 }
 
-const DownloadButton: FunctionComponent<DownloadButtonProps> = ({fileName, fileUrl, buttonText}) => {
-  return (
-    <Button type="primary" icon={<DownloadOutlined />} href={fileUrl} download={fileName}>
-      {buttonText}
-    </Button>
-  )
-}
+const DownloadButton: FunctionComponent<DownloadButtonProps> = ({fileName, fileUrl, buttonText}) => (
+  <Button
+    type="primary"
+    icon={<DownloadOutlined />}
+    href={fileUrl}
+    download={fileName}
+    style={{borderRadius: 10, fontWeight: 600}}>
+    {buttonText}
+  </Button>
+)
 
 export default DownloadButton

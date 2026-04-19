@@ -6,17 +6,13 @@ interface SelectComponentProps {
   onChange: (value: string) => void
 }
 
-const SelectComponent: FunctionComponent<SelectComponentProps> = ({data, onChange}) => {
-  return (
-    <Select
-      onChange={onChange}
-      placeholder="Selecteer een project"
-      options={data.map(item => ({
-        value: item,
-        label: item,
-      }))}
-    />
-  )
-}
+const SelectComponent: FunctionComponent<SelectComponentProps> = ({data, onChange}) => (
+  <Select
+    onChange={onChange}
+    placeholder="Filter op project"
+    style={{minWidth: 200}}
+    options={data.map(item => ({value: item, label: item}))}
+  />
+)
 
 export default SelectComponent

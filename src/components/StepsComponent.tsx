@@ -1,63 +1,53 @@
-import type {CSSProperties, FunctionComponent} from 'react'
+import type {FunctionComponent} from 'react'
 import {Steps, Typography} from 'antd'
 
-const {Paragraph, Text, Title} = Typography
+const {Paragraph, Text} = Typography
 
-const textStyle: CSSProperties = {
-  color: '#1677ff',
-}
-
-const StepsComponent: FunctionComponent = () => {
-  return (
-    <Steps
-      direction="vertical"
-      current={1}
-      items={[
-        {
-          title: (
-            <Typography>
-              <Title level={5} style={textStyle}>
-                Bachelor Toegepaste Informatica, specialisatie Application Development
-              </Title>
-            </Typography>
-          ),
-          description: (
-            <Typography>
-              <Title level={5}>2021-2023 (Niet Afgemaakt)</Title>
-              <Text style={textStyle}>Thomas More Geel, BE</Text>
-              <Paragraph>
-                Binnen deze opleiding focuste ik mij op web development en web-application development. Daarnaast leerde
-                ik binnen de opleiding ook softskills en basis networking en IoT kennen. Ook leerde ik basis kennis van
-                Linux en Linux webservices.
-              </Paragraph>
-            </Typography>
-          ),
-        },
-        {
-          title: (
-            <Typography>
-              <Title level={5} style={textStyle}>
-                Graduaat Programmeren (afgestudeerd met onderscheiding)
-              </Title>
-            </Typography>
-          ),
-          description: (
-            <Typography>
-              <Title level={5}>2023 - 2026</Title>
-              <Text style={textStyle}>Thomas More Turnhout, BE</Text>
-              <Paragraph>
-                Binnen het Graduaat Programmeren focuste ik mij op het verbeteren van mijn webdeveloper en programmeer
-                skills. Daarnaast verbeterde ik ook mijn softskills. De opleiding sloot ik af met een stage bij CMC Online
-                in Dessel, waar ik een formbuilder voor het klantenportaal mocht ontwikkelen in React. Wilt u meer weten
-                over mijn werkplekleren opdracht (zoals de opleiding stage noemt)? Download dan mijn eindrapport en kom
-                alles over het project te weten!
-              </Paragraph>
-            </Typography>
-          ),
-        },
-      ]}
-    />
-  )
-}
+const StepsComponent: FunctionComponent = () => (
+  <Steps
+    direction="vertical"
+    current={1}
+    items={[
+      {
+        title: (
+          <Text strong style={{fontSize: 15}}>
+            Bachelor Toegepaste Informatica — Application Development
+          </Text>
+        ),
+        subTitle: <Text type="secondary">2021 – 2023 (niet afgemaakt)</Text>,
+        description: (
+          <div style={{paddingBottom: 16}}>
+            <Text type="secondary" style={{display: 'block', marginBottom: 6}}>
+              Thomas More Geel, BE
+            </Text>
+            <Paragraph type="secondary" style={{marginBottom: 0}}>
+              Focuste op web development en web-application development. Daarnaast leerde ik softskills, basis
+              networking, IoT en Linux kennen.
+            </Paragraph>
+          </div>
+        ),
+      },
+      {
+        title: (
+          <Text strong style={{fontSize: 15, color: '#0ea5e9'}}>
+            Graduaat Programmeren (afgestudeerd met onderscheiding)
+          </Text>
+        ),
+        subTitle: <Text type="secondary">2023 – 2026</Text>,
+        description: (
+          <div style={{paddingBottom: 16}}>
+            <Text type="secondary" style={{display: 'block', marginBottom: 6}}>
+              Thomas More Turnhout, BE
+            </Text>
+            <Paragraph type="secondary" style={{marginBottom: 0}}>
+              Verbeterde mijn webdeveloper- en programmeerskills. Sloot de opleiding af met een stage bij CMC Online in
+              Dessel, waar ik een formbuilder voor het klantenportaal ontwikkelde in React.
+            </Paragraph>
+          </div>
+        ),
+      },
+    ]}
+  />
+)
 
 export default StepsComponent

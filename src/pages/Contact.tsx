@@ -1,58 +1,47 @@
-import type {CSSProperties, FunctionComponent} from 'react'
-import {Col, Row, Typography} from 'antd'
-import type {ContactInfo} from '@/interfaces/ContactInfo.ts'
+import type {FunctionComponent} from 'react'
+import {Card, Col, Row, Typography} from 'antd'
 import {EnvironmentOutlined, MailOutlined, PhoneOutlined} from '@ant-design/icons'
+import type {ContactInfo} from '@/interfaces/ContactInfo.ts'
 import ContactInfoComponent from '@/components/ContactInfoComponent.tsx'
-import ContactForm from '@/components/ContactForm.tsx'
 
-const {Paragraph, Title} = Typography
-
-const iconStyle: CSSProperties = {
-  color: '#1677ff',
-  fontSize: '24px',
-}
+const {Title, Paragraph, Text} = Typography
 
 const contactInfo: ContactInfo[] = [
   {
-    label: 'Werklocatie:',
-    value: 'Ik ben momenteel werkzoekend',
-    icon: <EnvironmentOutlined style={iconStyle} />,
+    label: 'Werklocatie',
+    value: 'Momenteel werkzoekend',
+    icon: <EnvironmentOutlined style={{color: '#0ea5e9', fontSize: 20}} />,
   },
   {
-    label: 'Email:',
+    label: 'Email',
     value: 'reinoutvanderwulp@gmail.com',
-    icon: <MailOutlined style={iconStyle} />,
+    icon: <MailOutlined style={{color: '#0ea5e9', fontSize: 20}} />,
   },
-  {
-    label: 'Telefoon:',
-    value: '+32 467 33 77 84',
-    icon: <PhoneOutlined style={iconStyle} />,
-  },
+  {label: 'Telefoon', value: '+32 467 33 77 84', icon: <PhoneOutlined style={{color: '#0ea5e9', fontSize: 20}} />},
 ]
 
-const Contact: FunctionComponent = () => {
-  return (
-    <div>
-      <div>
-        <Typography>
-          <Title level={2}>Contact</Title>
-          <Paragraph>
-            Ik kom graag met u in contact! Hieronder vind u mijn gegevens, of neem contact op via het formulier.
-          </Paragraph>
-        </Typography>
-      </div>
-      <Row>
-        <Col xs={24} lg={12}>
-          <ContactForm />
-        </Col>
-        <Col xs={24} lg={12}>
+const Contact: FunctionComponent = () => (
+  <div>
+    <Text type="secondary" style={{fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase'}}>
+      Neem contact op
+    </Text>
+    <Title level={2} style={{marginTop: 8, marginBottom: 8}}>
+      Laten we samenwerken
+    </Title>
+    <Paragraph type="secondary" style={{fontSize: 16, maxWidth: 480, marginBottom: 40}}>
+      Ik kom graag met u in contact! Hieronder vindt u mijn gegevens.
+    </Paragraph>
+
+    <Row gutter={[32, 32]}>
+      <Col xs={24} lg={12}>
+        <Card style={{borderRadius: 16}} styles={{body: {padding: 0}}}>
           {contactInfo.map((item, index) => (
-            <ContactInfoComponent item={item} key={index} />
+            <ContactInfoComponent item={item} key={index} isLast={index === contactInfo.length - 1} />
           ))}
-        </Col>
-      </Row>
-    </div>
-  )
-}
+        </Card>
+      </Col>
+    </Row>
+  </div>
+)
 
 export default Contact

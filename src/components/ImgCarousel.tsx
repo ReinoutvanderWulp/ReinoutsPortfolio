@@ -6,17 +6,28 @@ interface ImgCarouselProps {
   img2: string
 }
 
-const ImgCarousel: FunctionComponent<ImgCarouselProps> = ({img1, img2}) => {
-  return (
-    <Carousel autoplay autoplaySpeed={2000}>
-      <div>
-        <Image width="30%" src={img1} />
+const ImgCarousel: FunctionComponent<ImgCarouselProps> = ({img1, img2}) => (
+  <Carousel autoplay autoplaySpeed={3000} dotPosition="bottom">
+    {[img1, img2].map((src, i) => (
+      <div key={i}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background: '#f8fafc',
+            padding: 32,
+            minHeight: 280,
+          }}>
+          <Image
+            src={src}
+            preview={false}
+            style={{maxHeight: 320, maxWidth: '100%', objectFit: 'contain', borderRadius: 8}}
+          />
+        </div>
       </div>
-      <div>
-        <Image width="30%" src={img2} />
-      </div>
-    </Carousel>
-  )
-}
+    ))}
+  </Carousel>
+)
 
 export default ImgCarousel

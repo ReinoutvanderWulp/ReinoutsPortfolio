@@ -1,40 +1,55 @@
-import type {CSSProperties, FunctionComponent} from 'react'
-import {Col, Image, Row, Space, Typography} from 'antd'
-import DownloadButton from '@/components/DownloadButton.tsx'
+import type {FunctionComponent} from 'react'
+import {Avatar, Badge, Button, Col, Row, Space, Tag, Typography} from 'antd'
+import {DownloadOutlined, UserOutlined} from '@ant-design/icons'
 
 const {Title, Paragraph} = Typography
 
-const titleStyle: CSSProperties = {
-  color: '#1677ff',
-  marginBottom: 0,
-}
+const HeroSection: FunctionComponent = () => (
+  <Row align="middle" gutter={[48, 40]}>
+    <Col xs={24} md={15}>
+      <Space direction="vertical" size={16}>
+        <Tag color="blue" style={{borderRadius: 100, padding: '2px 12px', fontWeight: 600}}>
+          <Badge status="success" /> Beschikbaar voor nieuwe uitdagingen
+        </Tag>
 
-const HeroSection: FunctionComponent = () => {
-  return (
-    <div>
-      <Row align="middle" gutter={[32, 32]}>
-        <Col xs={24} md={16}>
-          <Space direction="vertical" size="middle">
-            <Title level={1} style={titleStyle}>
-              Reinout van der Wulp
-            </Title>
-            <Paragraph style={{fontSize: 16}}>
-              Programmeur, gespecialiseerd in Frontend Development, react & C#. Klaar voor de volgende uitdaging!
-            </Paragraph>
-            <Paragraph>Bekijk mijn projecten of neem contact op met mij!</Paragraph>
-            <DownloadButton
-              fileName="ReinoutvdW-CV.pdf"
-              fileUrl="/documents/ReinoutvdW-CV.pdf"
-              buttonText="Download CV"
-            />
-          </Space>
-        </Col>
-        <Col xs={24} md={8} style={{textAlign: 'center'}}>
-          <Image src="/images/Reinout.png" width={200} preview={false} style={{borderRadius: '45%'}} />
-        </Col>
-      </Row>
-    </div>
-  )
-}
+        <div>
+          <Title style={{marginBottom: 4, fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 800, lineHeight: 1.1}}>
+            Reinout van der Wulp
+          </Title>
+          <Title level={3} type="secondary" style={{marginTop: 0, fontWeight: 500}}>
+            Frontend en Full-Stack Developer · React & C#
+          </Title>
+        </div>
+
+        <Paragraph style={{fontSize: 16, maxWidth: 480, marginBottom: 0}} type="secondary">
+          Gepassioneerd door moderne webapplicaties maken in React en .NET. Op zoek naar mijn
+          volgende uitdaging.
+        </Paragraph>
+
+        <Button
+          type="primary"
+          icon={<DownloadOutlined />}
+          size="large"
+          href="/documents/ReinoutvdW-CV.pdf"
+          download="ReinoutvdW-CV.pdf"
+          style={{borderRadius: 10, fontWeight: 600}}>
+          Download CV
+        </Button>
+      </Space>
+    </Col>
+
+    <Col xs={24} md={9} style={{textAlign: 'center'}}>
+      <Avatar
+        size={200}
+        src="/images/Reinout.png"
+        icon={<UserOutlined />}
+        style={{
+          border: '4px solid #0ea5e9',
+          boxShadow: '0 0 0 6px #e0f2fe',
+        }}
+      />
+    </Col>
+  </Row>
+)
 
 export default HeroSection
