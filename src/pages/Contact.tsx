@@ -3,6 +3,7 @@ import {Card, Col, Row, Typography} from 'antd'
 import {EnvironmentOutlined, MailOutlined, PhoneOutlined} from '@ant-design/icons'
 import type {ContactInfo} from '@/interfaces/ContactInfo.ts'
 import ContactInfoComponent from '@/components/ContactInfoComponent.tsx'
+import MailButton from '@/components/MailButton.tsx'
 
 const {Title, Paragraph, Text} = Typography
 
@@ -39,6 +40,10 @@ const Contact: FunctionComponent = () => (
             <ContactInfoComponent item={item} key={index} isLast={index === contactInfo.length - 1} />
           ))}
         </Card>
+
+        <div style={{marginTop: 24}}>
+          <MailButton />
+        </div>
       </Col>
     </Row>
   </div>

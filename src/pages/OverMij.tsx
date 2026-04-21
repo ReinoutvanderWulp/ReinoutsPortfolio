@@ -24,7 +24,7 @@ const OverMij: FunctionComponent = () => (
             loop der jaren sterk gegroeid. Op de middelbare school kwam ik voor het eerst in aanraking met Java, HTML en
             PHP. De overstap naar Thomas More in Geel was daarna een logische keuze. Later ben ik overgestapt naar het
             graduaat Programmeren in Turnhout. Naast IT hou ik van reizen, lezen, muziek en films. In de toekomst wil ik
-            graag aan de slag als frontend developer met React of C#.
+            graag aan de slag als frontend of full-stack developer met React of C#/.NET.
           </Paragraph>
           <Button
             type="primary"
@@ -38,20 +38,12 @@ const OverMij: FunctionComponent = () => (
       </Col>
 
       <Col xs={0} md={8} style={{textAlign: 'center'}}>
-        <Avatar
-          size={180}
-          src="/images/Reinout.png"
-          icon={<UserOutlined />}
-          style={{border: '4px solid #0ea5e9', boxShadow: '0 0 0 6px #e0f2fe'}}
-        />
+        <Avatar size={180} src="/images/Reinout.png" icon={<UserOutlined />} style={{border: '4px solid #0ea5e9'}} />
       </Col>
     </Row>
 
     <Divider style={{margin: '40px 0'}} />
 
-    <Text type="secondary" style={{fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase'}}>
-      Vaardigheden
-    </Text>
     <Title level={3} style={{marginTop: 8, marginBottom: 24, fontWeight: 700}}>
       Skills & interesses
     </Title>
@@ -59,9 +51,6 @@ const OverMij: FunctionComponent = () => (
 
     <Divider style={{margin: '40px 0'}} />
 
-    <Text type="secondary" style={{fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase'}}>
-      Achtergrond
-    </Text>
     <Title level={3} style={{marginTop: 8, marginBottom: 24, fontWeight: 700}}>
       Mijn opleidingen
     </Title>

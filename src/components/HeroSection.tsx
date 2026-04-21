@@ -22,8 +22,7 @@ const HeroSection: FunctionComponent = () => (
         </div>
 
         <Paragraph style={{fontSize: 16, maxWidth: 480, marginBottom: 0}} type="secondary">
-          Gepassioneerd door moderne webapplicaties maken in React en .NET. Op zoek naar mijn
-          volgende uitdaging.
+          Gepassioneerd door moderne webapplicaties maken in React en .NET. Op zoek naar mijn volgende uitdaging.
         </Paragraph>
 
         <Button
@@ -45,7 +44,6 @@ const HeroSection: FunctionComponent = () => (
         icon={<UserOutlined />}
         style={{
           border: '4px solid #0ea5e9',
-          boxShadow: '0 0 0 6px #e0f2fe',
         }}
       />
     </Col>

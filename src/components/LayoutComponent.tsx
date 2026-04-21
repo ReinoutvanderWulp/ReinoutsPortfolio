@@ -1,6 +1,7 @@
 import type {FunctionComponent} from 'react'
 import {useState, createContext} from 'react'
-import {ConfigProvider, Layout, theme as antTheme} from 'antd'
+import {ConfigProvider, FloatButton, Layout, theme as antTheme} from 'antd'
+import {MoonOutlined, SunOutlined, VerticalAlignTopOutlined} from '@ant-design/icons'
 import Navigation from '@/routing/Navigation.tsx'
 import Routing from '@/routing/Routing.tsx'
 import FooterComponent from '@/components/FooterComponent.tsx'
@@ -50,8 +51,17 @@ const LayoutComponent: FunctionComponent = () => {
               WebkitBackdropFilter: 'blur(12px)',
               borderBottom: isDark ? '1px solid rgba(255,255,255,0.06)' : '1px solid #e2e8f0',
               padding: '0 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 16,
             }}>
             <Navigation />
+            <FloatButton
+              icon={isDark ? <SunOutlined /> : <MoonOutlined />}
+              onClick={toggleTheme}
+              tooltip={isDark ? 'Licht thema' : 'Donker thema'}
+              style={{position: 'static', width: 36, height: 36, boxShadow: 'none', flexShrink: 0}}
+            />
           </Header>
 
           <Content style={{padding: '48px 24px'}}>
@@ -73,6 +83,13 @@ const LayoutComponent: FunctionComponent = () => {
             <FooterComponent />
           </Footer>
         </Layout>
+
+        <FloatButton.BackTop
+          visibilityHeight={100}
+          style={{bottom: 32, right: 32}}
+          icon={<VerticalAlignTopOutlined />}
+          tooltip="Terug naar boven"
+        />
       </ThemeContext.Provider>
     </ConfigProvider>
   )

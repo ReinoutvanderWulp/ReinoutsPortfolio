@@ -23,31 +23,41 @@ const Details: FunctionComponent = () => {
   return (
     <div>
       <Breadcrumb
-        style={{ marginBottom: 32 }}
+        style={{marginBottom: 32}}
         items={[
-          { title: <HomeOutlined />, onClick: () => navigate('/'), style: { cursor: 'pointer' } },
-          { title: 'Mijn projecten', onClick: () => navigate('/mijnprojecten'), style: { cursor: 'pointer' } },
-          { title: detail.detailTitle },
+          {
+            title: (
+              <span onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
+                <HomeOutlined />
+              </span>
+            ),
+          },
+          {
+            title: (
+              <span onClick={() => navigate('/mijnprojecten')} style={{cursor: 'pointer'}}>
+                Mijn projecten
+              </span>
+            ),
+          },
+          {title: detail.detailTitle},
         ]}
       />
 
-      <Tag color="blue" style={{ borderRadius: 100, padding: '2px 12px', marginBottom: 12, fontWeight: 600 }}>
+      <Tag color="blue" style={{borderRadius: 100, padding: '2px 12px', marginBottom: 12, fontWeight: 600}}>
         {detail.vak}
       </Tag>
 
-      <Title level={2} style={{ marginTop: 4, marginBottom: 8, fontWeight: 700 }}>
+      <Title level={2} style={{marginTop: 4, marginBottom: 8, fontWeight: 700}}>
         {detail.detailTitle}
       </Title>
 
-      <Tag style={{ marginBottom: 32, borderRadius: 100 }}>{detail.datum}</Tag>
+      <Tag style={{marginBottom: 32, borderRadius: 100}}>{detail.datum}</Tag>
 
-      <div style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid #e2e8f0', marginBottom: 40 }}>
+      <div style={{borderRadius: 16, overflow: 'hidden', border: '1px solid #e2e8f0', marginBottom: 40}}>
         <ImgCarousel img1={detail.image1} img2={detail.image2} />
       </div>
 
-      <Paragraph style={{ fontSize: 16, color: '#475569', lineHeight: 1.8 }}>
-        {detail.description}
-      </Paragraph>
+      <Paragraph style={{fontSize: 16, color: '#475569', lineHeight: 1.8}}>{detail.description}</Paragraph>
     </div>
   )
 }

@@ -49,7 +49,7 @@ export const projectDetails: Detail[] = [
     datum: 'februari 2025 - mei 2025',
     detailTitle: 'IT Professional: formbuilder voor het klantenportaal',
     description:
-      'Als afstudeerproject voor mijn opleiding heb ik stage gelopen bij CMC Online in Dessel. Hier heb ik een Formbuilder ontwikkeld voor het klantenportaal, volledig gebouwd in React. Tijdens dit traject heb ik mijn expertise in datamodellering en prototyping verder uitgebreid en mijn kennis van het React-ecosysteem verdiept. Naast de technische aspecten heb ik waardevolle ervaring opgedaan met professionele soft skills, zoals vergaderen en het iteratief verwerken van feedback. Ik kijk met veel voldoening terug op deze eerste succesvolle kennismaking met het werkveld en ben klaar voor de volgende stap in mijn carrière.',
+      'Als afstudeerproject voor mijn opleiding heb ik stage gelopen bij CMC Online in Dessel. Hier heb ik een Formbuilder ontwikkeld voor het klantenportaal, volledig gebouwd in React. Tijdens dit traject heb ik mijn expertise in datamodellering en prototyping verder uitgebreid en mijn kennis van het React-ecosysteem verdiept. Naast de technische aspecten heb ik waardevolle ervaring opgedaan met professionele soft skills, zoals vergaderen en het verwerken van feedback. Ik kijk met veel voldoening terug op deze eerste succesvolle kennismaking met het werkveld en ben klaar voor de volgende stap in mijn carrière.',
     image1: '/images/cmc.png',
     image2: '/images/cmc.png',
   },
