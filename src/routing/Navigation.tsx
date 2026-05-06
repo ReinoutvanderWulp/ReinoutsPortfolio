@@ -1,4 +1,4 @@
-import type {FunctionComponent} from 'react'
+import type {CSSProperties, FunctionComponent} from 'react'
 import {useContext} from 'react'
 import type {MenuProps} from 'antd'
 import {Menu} from 'antd'
@@ -9,37 +9,27 @@ import {ThemeContext} from '@/components/LayoutComponent.tsx'
 type MenuItem = Required<MenuProps>['items'][number]
 
 const items: MenuItem[] = [
-  {
-    label: <Link to="/home">Home</Link>,
-    key: '/home',
-    icon: <HomeFilled />,
-  },
-  {
-    label: <Link to="/overmij">Over Mij</Link>,
-    key: '/overmij',
-    icon: <UserOutlined />,
-  },
-  {
-    label: <Link to="/mijnprojecten">Mijn Projecten</Link>,
-    key: '/mijnprojecten',
-    icon: <CodeFilled />,
-  },
-  {
-    label: <Link to="/contact">Contact</Link>,
-    key: '/contact',
-    icon: <MailOutlined />,
-  },
+  {label: <Link to="/home">Home</Link>, key: '/home', icon: <HomeFilled />},
+  {label: <Link to="/overmij">Over Mij</Link>, key: '/overmij', icon: <UserOutlined />},
+  {label: <Link to="/mijnprojecten">Mijn Projecten</Link>, key: '/mijnprojecten', icon: <CodeFilled />},
+  {label: <Link to="/contact">Contact</Link>, key: '/contact', icon: <MailOutlined />},
 ]
+
+const menuStyle: CSSProperties = {
+  flex: 1,
+  border: 'none',
+  background: 'transparent',
+}
+
+const getSelectedKey = (pathname: string): string => {
+  if (items.find(item => item?.key === pathname)) return pathname
+  if (pathname.startsWith('/mijnprojecten')) return '/mijnprojecten'
+  return '/home'
+}
 
 const Navigation: FunctionComponent = () => {
   const {theme} = useContext(ThemeContext)
   const location = useLocation()
-
-  const getSelectedKey = (pathname: string): string => {
-    if (items.find(item => item?.key === pathname)) return pathname
-    if (pathname.startsWith('/mijnprojecten')) return '/mijnprojecten'
-    return '/home'
-  }
 
   return (
     <Menu
@@ -47,7 +37,7 @@ const Navigation: FunctionComponent = () => {
       mode="horizontal"
       items={items}
       theme={theme === 'dark' ? 'dark' : 'light'}
-      style={{flex: 1, border: 'none', background: 'transparent'}}
+      style={menuStyle}
     />
   )
 }
