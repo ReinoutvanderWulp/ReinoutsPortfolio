@@ -11,17 +11,22 @@ jobs:
       - name: Code ophalen
         uses: actions/checkout@v4
 
+      - name: pnpm installeren
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
       - name: Node.js instellen
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: 24
+          cache: pnpm
 
       - name: Dependencies installeren
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Vite build uitvoeren
-        run: npm run build
+        run: pnpm run build
 
       - name: SSH sleutel instellen
         run: |
