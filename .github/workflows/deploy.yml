@@ -16,7 +16,7 @@ jobs:
       - name: pnpm installeren
         uses: pnpm/action-setup@v4
         with:
-          version: latest
+          version: 9.14.2
 
       - name: Node.js instellen
         uses: actions/setup-node@v4
@@ -25,7 +25,7 @@ jobs:
           cache: pnpm
 
       - name: Dependencies installeren
-        run: pnpm install --frozen-lockfile --config.onlyBuiltDependencies='["@swc/core","esbuild"]'
+        run: pnpm install --frozen-lockfile
 
       - name: Vite build uitvoeren
         run: pnpm run build
