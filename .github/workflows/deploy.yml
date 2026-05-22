@@ -25,7 +25,7 @@ jobs:
           cache: pnpm
 
       - name: Dependencies installeren
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --config.onlyBuiltDependencies='["@swc/core","esbuild"]'
 
       - name: Vite build uitvoeren
         run: pnpm run build
