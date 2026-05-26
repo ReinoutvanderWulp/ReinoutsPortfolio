@@ -35,12 +35,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.PROXMOX_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H -p 22 ${{ secrets.PROXMOX_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H -p ${{ secrets.PROXMOX_PORT }} ${{ secrets.PROXMOX_HOST }} >> ~/.ssh/known_hosts
 
       - name: Bestanden uploaden via rsync
         run: |
           rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.PROXMOX_PORT }} -o StrictHostKeyChecking=no" \
             dist/ \
             ${{ secrets.PROXMOX_USER }}@${{ secrets.PROXMOX_HOST }}:/var/www/reinoutsportfolio/
 
@@ -50,5 +50,5 @@ jobs:
           host: ${{ secrets.PROXMOX_HOST }}
           username: ${{ secrets.PROXMOX_USER }}
           key: ${{ secrets.PROXMOX_SSH_KEY }}
-          port: 22
+          port: ${{ secrets.PROXMOX_PORT }}
           script: sudo systemctl reload nginx
