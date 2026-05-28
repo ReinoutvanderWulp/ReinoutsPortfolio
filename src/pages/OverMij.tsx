@@ -96,7 +96,7 @@ const OverMij: FunctionComponent = () => (
     <StepsComponent />
 
     <div style={downloadWrapperStyle}>
-      <DownloadButton fileName="Eindverslag" fileUrl="/documents/eindverslag.docx" buttonText="Download eindverslag" />
+      <DownloadButton fileName="Eindverslag" fileUrl="/documents/eindverslag.pdf" buttonText="Download eindverslag" />
     </div>
   </div>
 )
