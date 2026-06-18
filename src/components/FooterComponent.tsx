@@ -44,7 +44,7 @@ const FooterComponent: FunctionComponent = () => (
       <Link href="https://www.instagram.com/reinoutvanderwulp/" target="_blank" style={instagramStyle}>
         <InstagramFilled />
       </Link>
-      <Link href="https://www.linkedin.com/in/reinout-van-der-wulp-822546251/" target="_blank" style={linkedinStyle}>
+      <Link href="https://www.linkedin.com/in/reinoutvanderwulp/" target="_blank" style={linkedinStyle}>
         <LinkedinFilled />
       </Link>
     </Space>
