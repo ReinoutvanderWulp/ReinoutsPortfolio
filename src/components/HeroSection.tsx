@@ -1,9 +1,9 @@
-import type { CSSProperties, FunctionComponent } from 'react'
-import { Avatar, Badge, Col, Row, Space, Tag, Typography } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
+import type {CSSProperties, FunctionComponent} from 'react'
+import {Avatar, Badge, Col, Row, Space, Tag, Typography} from 'antd'
+import {UserOutlined} from '@ant-design/icons'
 import DownloadButton from '@/components/DownloadButton.tsx'
 
-const { Title, Paragraph } = Typography
+const {Title, Paragraph} = Typography
 
 const tagStyle: CSSProperties = {
   borderRadius: 100,
@@ -35,6 +35,8 @@ const avatarColStyle: CSSProperties = {
 
 const avatarStyle: CSSProperties = {
   border: '4px solid #0ea5e9',
+  width: 280,
+  height: 280,
 }
 
 const HeroSection: FunctionComponent = () => (
@@ -56,16 +58,12 @@ const HeroSection: FunctionComponent = () => (
           Gepassioneerd door moderne webapplicaties maken in React en .NET. Op zoek naar mijn volgende uitdaging.
         </Paragraph>
 
-        <DownloadButton
-          fileName="ReinoutvdW-CV.pdf"
-          fileUrl="/documents/ReinoutvdW-CV.pdf"
-          buttonText="Download CV"
-        />
+        <DownloadButton fileName="ReinoutvdW-CV.pdf" fileUrl="/documents/ReinoutvdW-CV.pdf" buttonText="Download CV" />
       </Space>
     </Col>
 
     <Col xs={24} md={9} style={avatarColStyle}>
-      <Avatar size={200} src="/images/Reinout.png" icon={<UserOutlined />} style={avatarStyle} />
+      <Avatar size={280} src="/images/ProfielFotoNieuw.webp" icon={<UserOutlined />} style={avatarStyle} />
     </Col>
   </Row>
 )

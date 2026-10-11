@@ -1,5 +1,5 @@
 import type {CSSProperties, FunctionComponent} from 'react'
-import {Col, Divider, Row, Typography} from 'antd'
+import {Button, Col, Divider, Row, Space, Typography} from 'antd'
 import HeroSection from '@/components/HeroSection.tsx'
 import CardComponent from '@/components/CardComponent.tsx'
 import type {HomeData} from '@/interfaces/HomeData.ts'
@@ -34,6 +34,15 @@ const colStyle: CSSProperties = {
 const Home: FunctionComponent = () => (
   <div>
     <HeroSection />
+    <Divider style={dividerStyle} />
+    <Space direction="vertical">
+      <Text type="secondary" style={labelStyle}>
+        Interesse in de React code van de website?
+      </Text>
+      <Button type="primary" href="https://github.com/ReinoutvanderWulp">
+        Bekijk de code op Github
+      </Button>
+    </Space>
     <Divider style={dividerStyle} />
     <Text type="secondary" style={labelStyle}>
       Verken mijn portfolio

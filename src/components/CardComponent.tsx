@@ -1,9 +1,9 @@
-import type { CSSProperties, FunctionComponent } from 'react'
-import { Card, Typography } from 'antd'
-import { ArrowRightOutlined } from '@ant-design/icons'
-import { Link } from 'react-router'
+import type {CSSProperties, FunctionComponent} from 'react'
+import {Card, Typography} from 'antd'
+import {ArrowRightOutlined} from '@ant-design/icons'
+import {Link} from 'react-router'
 
-const { Text } = Typography
+const {Text} = Typography
 
 interface CardComponentProps {
   title: string
@@ -51,14 +51,13 @@ const footerStyle: CSSProperties = {
   marginTop: 16,
 }
 
-const CardComponent: FunctionComponent<CardComponentProps> = ({ title, url, pageName, src }) => (
+const CardComponent: FunctionComponent<CardComponentProps> = ({title, url, pageName, src}) => (
   <Link to={url} style={linkStyle}>
     <Card
       hoverable
       cover={src ? <img src={src} alt={pageName} style={coverStyle} /> : undefined}
       style={cardStyle}
-      styles={{ body: cardBodyStyle }}
-    >
+      styles={{body: cardBodyStyle}}>
       <Card.Meta
         title={<span style={pageNameStyle}>{pageName}</span>}
         description={<Text type="secondary">{title}</Text>}

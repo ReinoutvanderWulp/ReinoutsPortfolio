@@ -1,6 +1,6 @@
 import type {CSSProperties, FunctionComponent} from 'react'
 import {Divider, Space, Typography} from 'antd'
-import {InstagramFilled, LinkedinFilled} from '@ant-design/icons'
+import {GithubFilled, InstagramFilled, LinkedinFilled} from '@ant-design/icons'
 
 const {Text, Link} = Typography
 
@@ -31,6 +31,11 @@ const linkedinStyle: CSSProperties = {
   color: '#0a66c2',
 }
 
+const githubStyle: CSSProperties = {
+  fontSize: 24,
+  color: '#000000',
+}
+
 const FooterComponent: FunctionComponent = () => (
   <Space direction="vertical" size={4} style={wrapperStyle}>
     <Text strong style={nameStyle}>
@@ -46,6 +51,9 @@ const FooterComponent: FunctionComponent = () => (
       </Link>
       <Link href="https://www.linkedin.com/in/reinoutvanderwulp/" target="_blank" style={linkedinStyle}>
         <LinkedinFilled />
+      </Link>
+      <Link href="https://github.com/ReinoutvanderWulp" target="_blank" style={githubStyle}>
+        <GithubFilled />
       </Link>
     </Space>
   </Space>

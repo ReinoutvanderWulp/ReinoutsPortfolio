@@ -5,21 +5,31 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'Casestudy Minecraftapp',
+    subTitle: '.NET API test project',
     src: '/images/app.png',
     url: '/mijnprojecten/',
   },
   {
     id: 2,
     title: 'Analyseproject fietsclub platteberg',
+    subTitle: 'Requirement Analysis Project',
     src: '/images/usecasediagram.png',
     url: '/mijnprojecten/',
   },
   {
     id: 3,
     title: 'Stage opdracht CMC',
+    subTitle: 'Opdracht tijdens de stage',
     src: '/images/cmc.png',
     url: '/mijnprojecten/',
   },
+  {
+    id: 4,
+    title: 'React cursus Udemy',
+    subTitle: 'Cursus om React extra te oefenen',
+    src: '/images/Finora.png',
+    url: '/mijnprojecten/'
+  }
 ]
 
 export const projectDetails: Detail[] = [
@@ -53,4 +63,13 @@ export const projectDetails: Detail[] = [
     image1: '/images/cmc.png',
     image2: '/images/cmc.png',
   },
+  {
+    id: 4,
+    vak: 'Zelfstudie',
+    datum: 'februari 2025 - oktober 2026',
+    detailTitle: 'Learn React the fast way van Udemy: een diepere duik in React',
+    description: 'Om me voor te bereiden op de stage, en later op een job, volgde ik de React cursus Learn React the fast way op udemy. De cursus friste basisconcepten op die ik al kende, zoals context, state en componenten, maar ik leerde ook veel nieuwe dingen, zoals redux, data fetching en werken met een externe api om data op te halen plus opslaan van data in een supabase database. Alle leerstof kwam samen in het finora project, waarbij een gebruiker aandelen informatie kan beheren. Deze cursus heeft me veel geleerd, wat me bij mijn eerste job goed van pas zal komen!',
+    image1: '/images/Finora.png',
+    image2: '/images/Certificaat.jpg',
+  }
 ]

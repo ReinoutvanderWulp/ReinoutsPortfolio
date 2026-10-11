@@ -63,9 +63,9 @@ const MijnProjecten: FunctionComponent = () => {
           <Col xs={24} lg={12} key={index} style={colStyle}>
             <CardComponent
               src={project.src}
-              title={project.title}
+              title={project.subTitle}
               url={`${project.url}${project.id}`}
-              pageName="Details bekijken"
+              pageName={project.title}
             />
           </Col>
         ))}
