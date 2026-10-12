@@ -77,7 +77,7 @@ const OverMij: FunctionComponent = () => (
       </Col>
 
       <Col xs={0} md={8} style={avatarColStyle}>
-        <Avatar size={280} src="/images/ProfielFotoNieuw.jpg" icon={<UserOutlined />} style={avatarStyle} />
+        <Avatar size={280} src="/images/ProfielFotoNieuw.webp" icon={<UserOutlined />} style={avatarStyle} />
       </Col>
     </Row>
 

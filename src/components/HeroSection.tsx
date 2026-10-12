@@ -61,7 +61,7 @@ const HeroSection: FunctionComponent = () => (
     </Col>
 
     <Col xs={24} md={9} style={avatarColStyle}>
-      <Avatar size={280} src="/images/ProfielFotoNieuw.jpg" icon={<UserOutlined />} style={avatarStyle} />
+      <Avatar size={280} src="/images/ProfielFotoNieuw.webp" icon={<UserOutlined />} style={avatarStyle} />
     </Col>
   </Row>
 )

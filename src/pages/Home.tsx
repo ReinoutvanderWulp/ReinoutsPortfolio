@@ -39,7 +39,7 @@ const Home: FunctionComponent = () => (
       <Text type="secondary" style={labelStyle}>
         Interesse in de React code van de website?
       </Text>
-      <Button type="primary" href="https://github.com/ReinoutvanderWulp">
+      <Button type="primary" href="https://github.com/ReinoutvanderWulp" target="_blank">
         Bekijk de code op Github
       </Button>
     </Space>
