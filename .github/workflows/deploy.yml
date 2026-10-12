@@ -13,6 +13,8 @@ jobs:
 
       - name: pnpm installeren
         uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
 
       - name: Node.js instellen
         uses: actions/setup-node@v4
