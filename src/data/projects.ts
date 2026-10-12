@@ -5,7 +5,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'Casestudy Minecraftapp',
-    subTitle: '.NET API test project',
+    subTitle: 'Project Minecraft App',
     src: '/images/app.png',
     url: '/mijnprojecten/',
   },
@@ -19,14 +19,14 @@ export const projects: Project[] = [
   {
     id: 3,
     title: 'Stage opdracht CMC',
-    subTitle: 'Opdracht tijdens de stage',
+    subTitle: 'Stage Opdracht',
     src: '/images/cmc.png',
     url: '/mijnprojecten/',
   },
   {
     id: 4,
     title: 'React cursus Udemy',
-    subTitle: 'Cursus om React extra te oefenen',
+    subTitle: 'Extra Cursus React',
     src: '/images/Finora.png',
     url: '/mijnprojecten/'
   }

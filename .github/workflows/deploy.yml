@@ -7,21 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Code ophalen
         uses: actions/checkout@v4
 
       - name: pnpm installeren
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.14.2
 
       - name: Node.js instellen
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
           cache: pnpm
 
       - name: Dependencies installeren
